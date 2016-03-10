@@ -3,7 +3,8 @@
 var IdentifierMap = require('./helper/identifier-map.js').IdentifierMap,
     scheduledIntervalFunctions,
     scheduledTimeoutFunctions,
-    worker = new Worker('./worker/timing-worker.js'); // eslint-disable-line no-undef
+    Worker = require('worker!./worker/timing-worker.js'),
+    worker = new Worker(); // eslint-disable-line no-undef
 
 scheduledIntervalFunctions = new IdentifierMap();
 scheduledTimeoutFunctions = new IdentifierMap();
